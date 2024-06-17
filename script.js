@@ -3,6 +3,7 @@ let input;
 let button;
 let button2;
 let button3;
+let memoryGame;
 
 function setup() {
     createCanvas(1920, 1080);
@@ -57,9 +58,13 @@ function pairs() {
 function memory() {
     let n = getValueAndResetBoard();
     if (n >= 4 && n % 2 == 0) {
-        squares = new Squares(0, 0, 100, n);
-        squares.drawSquaresWithHiddenNumbers();
+        memoryGame = new MemoryGame(0, 0, 100, n);
+        memoryGame.drawSquaresWithHiddenNumbers();
     } else {
         console.log("Valoarea lui n este >= 4 si trebuie sa fie para.");
     }
+}
+
+function mousePressed() {
+    memoryGame.showNumbers();
 }

@@ -1,9 +1,11 @@
-class Squares {
+class MemoryGame {
     #x = 0;
     #y = 0;
     #length = 10;
     #n = 4;
     #numbers = [];
+    #squares = [];
+
     constructor(x, y, length, n) {
         this.#x = x;
         this.#y = y;
@@ -12,27 +14,14 @@ class Squares {
         this.initNumbers();
     }
 
-    drawSquaresWithoutNumbers() {
-        for (let i = 0; i < this.#n; i++) {
-            push();
-            for (let j = 0; j < this.#n; j++) {
-                let square = new Square(this.#x, this.#y, this.#length, 1);
-                square.drawSquare();
-                translate(this.#length, 0);
-            }
-            pop();
-            translate(0, this.#length);
-        }
-    }
-
-    drawSquaresWithNumbers() {
+    drawSquaresWithHiddenNumbers() {
         for (let i = 0; i < this.#n; i++) {
             push();
             for (let j = 0; j < this.#n; j++) {
                 let n = this.getRandomNumber();
                 let square = new Square(this.#x, this.#y, this.#length, n);
+                this.#squares.push(square);
                 square.drawSquare();
-                square.drawNumber();
                 translate(this.#length, 0);
             }
             pop();
@@ -61,5 +50,11 @@ class Squares {
             this.#numbers.push(0);
         }
 
+    }
+
+    showNumbers() {
+        for (const square of this.#squares) {
+            square.drawNumber();
+        }
     }
 }
