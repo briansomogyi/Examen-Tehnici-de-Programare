@@ -16,11 +16,12 @@ class MemoryGame {
 
     drawSquaresWithHiddenNumbers() {
         for (let i = 0; i < this.#n; i++) {
+            const squares = [];
             push();
             for (let j = 0; j < this.#n; j++) {
                 let n = this.getRandomNumber();
                 let square = new Square(this.#x, this.#y, this.#length, n);
-                this.#squares.push(square);
+                squares.push(square);
                 square.drawSquare();
                 // translate(this.#length, 0);
                 this.#x += this.#length;
@@ -29,6 +30,7 @@ class MemoryGame {
             // translate(0, this.#length);
             this.#x = 0;
             this.#y += this.#length;
+            this.#squares.push(squares);
         }
     }
 
@@ -56,8 +58,10 @@ class MemoryGame {
     }
 
     showNumbers() {
-        for (const square of this.#squares) {
-            square.drawNumber();
+        for (const squares of this.#squares) {
+            for (const square of squares) {
+                square.drawNumber();
+            }
         }
     }
 }

@@ -66,5 +66,7 @@ function memory() {
 }
 
 function mousePressed() {
-    memoryGame.showNumbers();
+    if (memoryGame !== undefined) {
+        memoryGame.showNumbers();
+    }
 }
