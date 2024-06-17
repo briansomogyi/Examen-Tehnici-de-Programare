@@ -2,7 +2,7 @@ class Squares{
     #x=0;
     #y=0;
     #length=10;
-    #n=4
+    #n=4;
     constructor(x,y,length,n){
         this.#x=x;
         this.#y=y;
@@ -13,7 +13,7 @@ class Squares{
         for(let i=0;i<this.#n;i++){
             push();
             for(let j=0;j<this.#n;j++){
-                let square = new Square(this.#x,this.#y,this.#length);
+                let square = new Square(this.#x,this.#y,this.#length,this.#n);
                 square.drawSquare();
                 translate(this.#length,0);
             }

@@ -1,6 +1,7 @@
 let squares;
 let input;
 let button;
+let button2;
 
 function setup() {
     createCanvas(1920, 1080);
@@ -11,7 +12,9 @@ function setup() {
     button.position(input.x + input.width, height / 2);
     button.mousePressed(generate);
 
-
+    button2 = createButton("Perechi");
+    button2.position(button.x + button.width, height / 2);
+    button2.mousePressed(pairs);
 }
 
 function draw() {
@@ -29,4 +32,8 @@ function generate() {
     } else {
         console.log("Valoarea lui n este >= 4 si trebuie sa fie para.");
     }
+}
+
+function pairs(){
+    
 }
