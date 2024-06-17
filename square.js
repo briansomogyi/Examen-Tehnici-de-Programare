@@ -11,7 +11,6 @@ class Square {
     }
     drawSquare() {
         rect(this.#x, this.#y, this.#length, this.#length);
-        this.drawNumber();
     }
     drawNumber() {
         text(`${this.#n}`, this.#x + this.#length / 2, this.#y + this.#length / 2);

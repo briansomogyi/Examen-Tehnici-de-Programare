@@ -26,6 +26,21 @@ class Squares {
         }
     }
 
+    drawSquaresWithNumbers() {
+        for (let i = 0; i < this.#n; i++) {
+            push();
+            for (let j = 0; j < this.#n; j++) {
+                let n = this.getRandomNumber();
+                let square = new Square(this.#x, this.#y, this.#length, n);
+                square.drawSquare();
+                square.drawNumber();
+                translate(this.#length, 0);
+            }
+            pop();
+            translate(0, this.#length);
+        }
+    }
+
     getRandomNumber() {
         let number = this.initRandomNumber();
         if (this.#numbers[number] < 2) {

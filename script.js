@@ -29,7 +29,7 @@ function draw() {
 function generate() {
     let value = input.value();
     let n = Number(value);
-    input.value('');
+    input.value("");
     clear();
     if (n >= 4 && n % 2 == 0) {
         squares = new Squares(0, 0, 100, n);
@@ -40,7 +40,16 @@ function generate() {
 }
 
 function pairs() {
-
+    let value = input.value();
+    let n = Number(value);
+    input.value("");
+    clear();
+    if (n >= 4 && n % 2 == 0) {
+        squares = new Squares(0, 0, 100, n);
+        squares.drawSquaresWithNumbers();
+    } else {
+        console.log("Valoarea lui n este >= 4 si trebuie sa fie para.");
+    }
 }
 
 function memory() {
