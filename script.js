@@ -55,5 +55,11 @@ function pairs() {
 }
 
 function memory() {
-
+    let n = getValueAndResetBoard();
+    if (n >= 4 && n % 2 == 0) {
+        squares = new Squares(0, 0, 100, n);
+        squares.drawSquaresWithHiddenNumbers();
+    } else {
+        console.log("Valoarea lui n este >= 4 si trebuie sa fie para.");
+    }
 }
