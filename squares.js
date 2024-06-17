@@ -13,7 +13,9 @@ class Squares{
         for(let i=0;i<this.#n;i++){
             push();
             for(let j=0;j<this.#n;j++){
-                let square = new Square(this.#x,this.#y,this.#length,this.#n);
+                let randomNumber=random(1,8.1);
+                let n=Math.floor(randomNumber);
+                let square = new Square(this.#x,this.#y,this.#length,n);
                 square.drawSquare();
                 translate(this.#length,0);
             }
