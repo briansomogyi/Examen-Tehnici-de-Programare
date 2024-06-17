@@ -27,14 +27,13 @@ class Squares {
     }
 
     getRandomNumber() {
-        let number;
-        do {
-            number = this.initRandomNumber();
-            if (this.#numbers[number] < 2) {
-                this.#numbers[number]++;
-                return number;
-            }
-        } while (this.#numbers[number] < 2);
+        let number = this.initRandomNumber();
+        if (this.#numbers[number] < 2) {
+            this.#numbers[number]++;
+            return number;
+        } else {
+            return this.getRandomNumber();
+        }
     }
 
     initRandomNumber() {
