@@ -22,10 +22,13 @@ class MemoryGame {
                 let square = new Square(this.#x, this.#y, this.#length, n);
                 this.#squares.push(square);
                 square.drawSquare();
-                translate(this.#length, 0);
+                // translate(this.#length, 0);
+                this.#x += this.#length;
             }
             pop();
-            translate(0, this.#length);
+            // translate(0, this.#length);
+            this.#x = 0;
+            this.#y += this.#length;
         }
     }
 
