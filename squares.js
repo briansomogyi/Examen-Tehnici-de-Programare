@@ -52,13 +52,13 @@ class Squares {
     }
 
     initRandomNumber() {
-        let randomNumber = random(1, 8.1);
+        let randomNumber = random(1, 2 * this.#n + 0.1);
         let number = Math.floor(randomNumber);
         return number;
     }
 
     initNumbers() {
-        for (let i = 0; i < 9; i++) {
+        for (let i = 0; i < 2 * this.#n + 1; i++) {
             this.#numbers.push(0);
         }
 
