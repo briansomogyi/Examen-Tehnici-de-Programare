@@ -12,12 +12,11 @@ class Squares {
         this.initNumbers();
     }
 
-    drawSquares() {
+    drawSquaresWithoutNumbers() {
         for (let i = 0; i < this.#n; i++) {
             push();
             for (let j = 0; j < this.#n; j++) {
-                let n = this.getRandomNumber();
-                let square = new Square(this.#x, this.#y, this.#length, n);
+                let square = new Square(this.#x, this.#y, this.#length, 1);
                 square.drawSquare();
                 translate(this.#length, 0);
             }

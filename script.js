@@ -27,23 +27,25 @@ function draw() {
 }
 
 function generate() {
-    let value = input.value();
-    let n = Number(value);
-    input.value("");
-    clear();
+    let n = getValueAndResetBoard();
     if (n >= 4 && n % 2 == 0) {
         squares = new Squares(0, 0, 100, n);
-        squares.drawSquares();
+        squares.drawSquaresWithoutNumbers();
     } else {
         console.log("Valoarea lui n este >= 4 si trebuie sa fie para.");
     }
 }
 
-function pairs() {
+function getValueAndResetBoard() {
     let value = input.value();
     let n = Number(value);
     input.value("");
     clear();
+    return n;
+}
+
+function pairs() {
+    let n = getValueAndResetBoard();
     if (n >= 4 && n % 2 == 0) {
         squares = new Squares(0, 0, 100, n);
         squares.drawSquaresWithNumbers();
