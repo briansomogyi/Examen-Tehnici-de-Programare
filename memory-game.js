@@ -64,4 +64,8 @@ class MemoryGame {
             }
         }
     }
+
+    getNumber(x, y) {
+        this.#squares[y][x].drawNumber();
+    }
 }
