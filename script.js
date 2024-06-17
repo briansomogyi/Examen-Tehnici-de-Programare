@@ -2,6 +2,7 @@ let squares;
 let input;
 let button;
 let button2;
+let button3;
 
 function setup() {
     createCanvas(1920, 1080);
@@ -15,6 +16,10 @@ function setup() {
     button2 = createButton("Perechi");
     button2.position(button.x + button.width, height / 2);
     button2.mousePressed(pairs);
+
+    button3 = createButton("Memory");
+    button3.position(button2.x + button2.width, height / 2);
+    button3.mousePressed(memory);
 }
 
 function draw() {
@@ -34,6 +39,10 @@ function generate() {
     }
 }
 
-function pairs(){
-    
+function pairs() {
+
+}
+
+function memory() {
+
 }
